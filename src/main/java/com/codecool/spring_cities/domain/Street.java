@@ -4,18 +4,16 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
-public class City {
+public class Street {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cityName;
-    private Long population;
+    private String streetName;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "city")
-    List<Street> cityStreetList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "street")
+    private List<Houses> streetHouses = new ArrayList<>();
 }
