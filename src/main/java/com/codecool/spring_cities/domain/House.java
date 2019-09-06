@@ -18,5 +18,6 @@ public class House {
     @OneToOne
     private Street street;
     private int houseResidents;
+    private String houseNumber;
 }
 
