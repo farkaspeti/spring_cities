@@ -3,21 +3,20 @@ package com.codecool.spring_cities.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
-public class Street {
+public class House {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String streetName;
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "street")
-    private List<House> streetHouses = new ArrayList<>();
     
     @OneToOne
     private City city;
+    
+    @OneToOne
+    private Street street;
+    private int houseResidents;
 }
+
