@@ -1,4 +1,31 @@
 package com.codecool.spring_cities.services;
 
-public class StreetServiceImpl {
+import com.codecool.spring_cities.domain.City;
+import com.codecool.spring_cities.domain.Street;
+import com.codecool.spring_cities.repositories.StreetRepository;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class StreetServiceImpl implements StreetService {
+    
+    private final StreetRepository streetRepository;
+    
+    public StreetServiceImpl(StreetRepository streetRepository) {
+        this.streetRepository = streetRepository;
+    }
+    
+    @Override
+    public Set<Street> getStreets(City city) {
+        Set<Street> streetSet = new HashSet<>();
+        streetRepository.findAllById(city.getId()).iterator().forEachRemaining(streetSet::add);
+        
+        return streetSet;
+    }
+    
+    @Override
+    public Street getStreet(Long id) {
+        
+        return streetRepository.findById(id).get();
+    }
 }
