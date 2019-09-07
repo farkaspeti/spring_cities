@@ -1,4 +1,4 @@
-package com.codecool.spring_cities.domain;
+package com.codecool.spring_cities.model;
 
 import lombok.Data;
 

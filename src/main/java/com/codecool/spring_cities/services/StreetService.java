@@ -1,13 +1,12 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.domain.City;
-import com.codecool.spring_cities.domain.Street;
+import com.codecool.spring_cities.model.Street;
 
 import java.util.Set;
 
 public interface StreetService {
     
-    Set<Street> getStreets(City city);
+    Set<Street> getStreets(Long cityId);
     
     Street getStreet(Long id);
 }

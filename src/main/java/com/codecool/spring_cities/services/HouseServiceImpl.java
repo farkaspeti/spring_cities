@@ -1,8 +1,7 @@
 package com.codecool.spring_cities.services;
 
 
-import com.codecool.spring_cities.domain.City;
-import com.codecool.spring_cities.domain.House;
+import com.codecool.spring_cities.model.House;
 import com.codecool.spring_cities.repositories.HouseRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,7 @@ public class HouseServiceImpl implements HouseService {
     }
     
     @Override
-    public House getHouse(City city) {
-        return houseRepository.findById(city.getId()).get();
+    public House getHouse(Long cityId) {
+        return houseRepository.getHouseByCityId(cityId);
     }
 }

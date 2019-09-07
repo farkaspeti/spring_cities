@@ -1,10 +1,9 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.domain.City;
+import com.codecool.spring_cities.model.City;
 import com.codecool.spring_cities.repositories.CityRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -18,10 +17,8 @@ public class CityServiceImpl implements CityService {
     
     @Override
     public Set<City> getCities() {
-        Set<City> citySet = new HashSet<>();
         
-        cityRepository.findAll().iterator().forEachRemaining(citySet::add);
-        return citySet;
+        return (Set) cityRepository.findAll();
     }
     
     @Override

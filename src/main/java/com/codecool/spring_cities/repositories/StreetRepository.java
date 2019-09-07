@@ -1,11 +1,16 @@
 package com.codecool.spring_cities.repositories;
 
-import com.codecool.spring_cities.domain.Street;
+import com.codecool.spring_cities.model.Street;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
+@Repository
 public interface StreetRepository extends CrudRepository<Street, Long> {
     
-    Set<Street> findAllById(Long cityId);
+    @Query(value = "select * from street where cityId = :id", nativeQuery = true)
+    Set<Street> findAllByCityId( @Param("id") Long cityId);
 }

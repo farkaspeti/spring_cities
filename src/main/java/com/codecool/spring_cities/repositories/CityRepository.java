@@ -1,7 +1,9 @@
 package com.codecool.spring_cities.repositories;
 
-import com.codecool.spring_cities.domain.City;
+import com.codecool.spring_cities.model.City;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CityRepository extends CrudRepository<City, Long> {
 }

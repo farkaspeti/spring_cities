@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.domain.City;
+import com.codecool.spring_cities.model.City;
 
 import java.util.Set;
 
