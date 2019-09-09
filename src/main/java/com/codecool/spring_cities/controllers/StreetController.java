@@ -2,10 +2,8 @@ package com.codecool.spring_cities.controllers;
 
 import com.codecool.spring_cities.model.Street;
 import com.codecool.spring_cities.services.StreetService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +24,11 @@ public class StreetController {
     
     @GetMapping(value = "/{cityId}/street/{streetId}", produces = "application/json")
     public Street getStreetDetailsByCityId(@PathVariable("cityId") Long cityId, @PathVariable("streetId") Long streetId) {
+        return null;
+    }
+    
+    @PostMapping(value = "/cities/{cityId}/streets", consumes = "application/json", produces = "application/json")
+    public Street addStreet(@PathVariable("cityId") Long cityId) {
         return null;
     }
 }
