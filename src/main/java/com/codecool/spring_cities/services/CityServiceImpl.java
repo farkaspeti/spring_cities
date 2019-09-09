@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.model.City;
+import com.codecool.spring_cities.entities.City;
 import com.codecool.spring_cities.repositories.CityRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +25,11 @@ public class CityServiceImpl implements CityService {
     public City getCity(Long cityId) {
         
         return cityRepository.getCity(cityId);
+    }
+    
+    @Override
+    public City addCity(City city) {
+        
+        return cityRepository.save(city);
     }
 }

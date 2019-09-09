@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.model.Street;
+import com.codecool.spring_cities.entities.Street;
 
 import java.util.Set;
 
