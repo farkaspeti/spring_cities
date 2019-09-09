@@ -1,4 +1,6 @@
 package com.codecool.spring_cities.model;
 
-public class StreetDto {
+import java.io.Serializable;
+
+public class StreetDto implements Serializable {
 }

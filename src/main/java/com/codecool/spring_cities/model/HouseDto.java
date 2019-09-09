@@ -1,4 +1,6 @@
 package com.codecool.spring_cities.model;
 
-public class HouseDto {
+import java.io.Serializable;
+
+public class HouseDto implements Serializable {
 }
