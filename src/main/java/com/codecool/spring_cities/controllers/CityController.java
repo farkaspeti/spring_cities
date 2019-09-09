@@ -3,10 +3,7 @@ package com.codecool.spring_cities.controllers;
 
 import com.codecool.spring_cities.model.City;
 import com.codecool.spring_cities.services.CityService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.Set;
@@ -28,6 +25,11 @@ public class CityController {
     @GetMapping(value = "/{id}", produces = "application/json")
     public City getCityId(@PathVariable("id") Long id) {
         return cityService.getCity(id);
+    }
+    
+    @PostMapping(value="/cities", consumes = "application/json",produces = "application/json")
+    public City addCity() {
+        return null;
     }
 }
 
