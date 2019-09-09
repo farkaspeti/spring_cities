@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.repositories;
 
-import com.codecool.spring_cities.model.House;
+import com.codecool.spring_cities.entities.House;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
