@@ -23,7 +23,7 @@ public class CityController {
     }
     
     @GetMapping(value = "/{id}", produces = "application/json")
-    public City getCityId(@PathVariable("id") Long id) {
+    public City getCity(@PathVariable("id") Long id) {
         return cityService.getCity(id);
     }
     
