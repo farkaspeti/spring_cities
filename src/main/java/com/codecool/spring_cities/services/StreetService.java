@@ -8,5 +8,5 @@ public interface StreetService {
     
     Set<Street> getStreets(Long cityId);
     
-    Street getStreet(Long id);
+    Street getStreetDetails(Long id,Long cityId);
 }
