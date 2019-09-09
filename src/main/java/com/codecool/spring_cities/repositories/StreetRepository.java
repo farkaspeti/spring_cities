@@ -11,6 +11,6 @@ import java.util.Set;
 @Repository
 public interface StreetRepository extends CrudRepository<Street, Long> {
     
-    @Query(value = "select * from street where cityId = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM street where city_id = :id", nativeQuery = true)
     Set<Street> findAllByCityId( @Param("id") Long cityId);
 }

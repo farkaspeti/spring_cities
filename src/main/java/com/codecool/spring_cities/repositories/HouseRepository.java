@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HouseRepository extends CrudRepository<House, Long> {
-    @Query(value = "select * from houses  where cityId = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM house WHERE city_id = :id", nativeQuery = true)
     House getHouseByCityId(@Param("id") Long cityId);
 }
