@@ -1,8 +1,7 @@
 package com.codecool.spring_cities.controllers;
 
-import com.codecool.spring_cities.model.Street;
+import com.codecool.spring_cities.entities.Street;
 import com.codecool.spring_cities.services.StreetService;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

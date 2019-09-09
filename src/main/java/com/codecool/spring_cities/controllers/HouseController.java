@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.controllers;
 
-import com.codecool.spring_cities.model.House;
+import com.codecool.spring_cities.entities.House;
 import com.codecool.spring_cities.services.HouseService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +20,7 @@ public class HouseController {
     }
     
     @PostMapping(value = "/houses", consumes = "application/json", produces = "application/json")
-    public House addHouse(){
+    public House addHouse() {
         return null;
     }
 }
