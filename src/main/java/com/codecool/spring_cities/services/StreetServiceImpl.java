@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.entities.Street;
+import com.codecool.spring_cities.entities.StreetEntity;
 import com.codecool.spring_cities.repositories.StreetRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +16,12 @@ public class StreetServiceImpl implements StreetService {
     }
     
     @Override
-    public Set<Street> getStreets(Long cityId) {
+    public Set<StreetEntity> getStreets(Long cityId) {
         return streetRepository.findAllByCityId(cityId);
     }
     
     @Override
-    public Street getStreetDetails(Long id, Long cityId) {
+    public StreetEntity getStreetDetails(Long id, Long cityId) {
         
         return streetRepository.getStreetDetails(id, cityId);
     }

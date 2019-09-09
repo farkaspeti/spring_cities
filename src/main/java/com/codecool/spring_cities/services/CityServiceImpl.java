@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.entities.City;
+import com.codecool.spring_cities.entities.CityEntity;
 import com.codecool.spring_cities.repositories.CityRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,20 +16,20 @@ public class CityServiceImpl implements CityService {
     }
     
     @Override
-    public Set<City> getCities() {
+    public Set<CityEntity> getCities() {
         
         return (Set) cityRepository.findAll();
     }
     
     @Override
-    public City getCity(Long cityId) {
+    public CityEntity getCity(Long cityId) {
         
         return cityRepository.getCity(cityId);
     }
     
     @Override
-    public City addCity(City city) {
+    public CityEntity saveCity(CityEntity cityEntity) {
         
-        return cityRepository.save(city);
+        return null;
     }
 }

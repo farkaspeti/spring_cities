@@ -1,12 +1,12 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.entities.Street;
+import com.codecool.spring_cities.entities.StreetEntity;
 
 import java.util.Set;
 
 public interface StreetService {
     
-    Set<Street> getStreets(Long cityId);
+    Set<StreetEntity> getStreets(Long cityId);
     
-    Street getStreetDetails(Long id,Long cityId);
+    StreetEntity getStreetDetails(Long id, Long cityId);
 }

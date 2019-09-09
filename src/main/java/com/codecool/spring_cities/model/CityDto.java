@@ -11,7 +11,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class CityDto implements Serializable {
     
-    private Long id;
     private String cityName;
     private Long population;
 

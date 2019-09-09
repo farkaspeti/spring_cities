@@ -1,7 +1,7 @@
 package com.codecool.spring_cities.controllers;
 
 
-import com.codecool.spring_cities.entities.City;
+import com.codecool.spring_cities.entities.CityEntity;
 import com.codecool.spring_cities.services.CityService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,17 +18,17 @@ public class CityController {
     }
     
     @RequestMapping(value = "/cities", produces = "application/json")
-    public Set<City> getCities() {
+    public Set<CityEntity> getCities() {
         return cityService.getCities();
     }
     
     @GetMapping(value = "/{id}", produces = "application/json")
-    public City getCity(@PathVariable("id") Long id) {
+    public CityEntity getCity(@PathVariable("id") Long id) {
         return cityService.getCity(id);
     }
     
     @PostMapping(value = "/cities", consumes = "application/json", produces = "application/json")
-    public City addCity() {
+    public CityEntity addCity() {
         return null;
     }
 }

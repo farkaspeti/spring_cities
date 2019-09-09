@@ -1,14 +1,14 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.entities.City;
+import com.codecool.spring_cities.entities.CityEntity;
 
 import java.util.Set;
 
 public interface CityService {
     
-    Set<City> getCities();
+    Set<CityEntity> getCities();
     
-    City getCity(Long id);
+    CityEntity getCity(Long id);
     
-    City addCity(City city);
+    CityEntity saveCity(CityEntity cityEntity);
 }

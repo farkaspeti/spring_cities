@@ -1,7 +1,7 @@
 package com.codecool.spring_cities.services;
 
 
-import com.codecool.spring_cities.entities.House;
+import com.codecool.spring_cities.entities.HouseEntity;
 import com.codecool.spring_cities.repositories.HouseRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class HouseServiceImpl implements HouseService {
     }
     
     @Override
-    public House getHouse(Long cityId) {
+    public HouseEntity getHouse(Long cityId) {
         return houseRepository.getHouseByCityId(cityId);
     }
 }
