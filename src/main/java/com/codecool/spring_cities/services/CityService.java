@@ -11,4 +11,6 @@ public interface CityService {
     CityEntity getCity(Long id);
     
     CityEntity saveCity(CityEntity cityEntity);
+    
+    Boolean findCity(Long id);
 }

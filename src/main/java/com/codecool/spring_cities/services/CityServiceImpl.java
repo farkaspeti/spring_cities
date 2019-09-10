@@ -32,4 +32,9 @@ public class CityServiceImpl implements CityService {
         
         return null;
     }
+    
+    @Override
+    public Boolean findCity(Long id) {
+        return cityRepository.getCity(id) != null;
+    }
 }
