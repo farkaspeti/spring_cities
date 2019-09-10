@@ -4,7 +4,7 @@ import com.codecool.spring_cities.entities.StreetEntity;
 import com.codecool.spring_cities.repositories.StreetRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class StreetServiceImpl implements StreetService {
@@ -16,13 +16,18 @@ public class StreetServiceImpl implements StreetService {
     }
     
     @Override
-    public Set<StreetEntity> getStreets(Long cityId) {
-        return streetRepository.findAllByCityId(cityId);
+    public List<StreetEntity> getStreets(Long cityId) {
+        return streetRepository.findAllByCityEntityId(cityId);
     }
     
     @Override
     public StreetEntity getStreetDetails(Long id, Long cityId) {
         
-        return streetRepository.getStreetDetails(id, cityId);
+        return streetRepository.findByIdAndCityEntityId(id, cityId);
+    }
+    
+    @Override
+    public StreetEntity save(StreetEntity streetEntity) {
+        return streetRepository.save(streetEntity);
     }
 }
