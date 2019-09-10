@@ -4,7 +4,8 @@ import com.codecool.spring_cities.entities.CityEntity;
 import com.codecool.spring_cities.repositories.CityRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CityServiceImpl implements CityService {
@@ -16,25 +17,25 @@ public class CityServiceImpl implements CityService {
     }
     
     @Override
-    public Set<CityEntity> getCities() {
+    public List<CityEntity> getCities() {
         
-        return (Set) cityRepository.findAll();
+        return (List) cityRepository.findAll();
     }
     
     @Override
-    public CityEntity getCity(Long cityId) {
+    public Optional<CityEntity> findCityById(Long cityId) {
         
-        return cityRepository.getCity(cityId);
+        return cityRepository.findById(cityId);
     }
     
     @Override
-    public CityEntity saveCity(CityEntity cityEntity) {
+    public CityEntity save(CityEntity cityEntity) {
         
-        return null;
+        return cityRepository.save(cityEntity);
     }
     
     @Override
     public Boolean findCity(Long id) {
-        return cityRepository.getCity(id) != null;
+        return cityRepository.findById(id) != null;
     }
 }
