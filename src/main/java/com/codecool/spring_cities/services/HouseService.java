@@ -5,7 +5,8 @@ import com.codecool.spring_cities.entities.HouseEntity;
 import java.util.Optional;
 
 public interface HouseService {
-
+    
     Optional<HouseEntity> getHouse(Long cityId);
     
+    HouseEntity save(HouseEntity houseEntity);
 }

@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface HouseRepository extends CrudRepository<HouseEntity, Long> {
     
     Optional<HouseEntity> findById(Long cityId);
+    
+    HouseEntity save (HouseEntity houseEntity);
 }

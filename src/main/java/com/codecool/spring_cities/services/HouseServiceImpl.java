@@ -20,4 +20,9 @@ public class HouseServiceImpl implements HouseService {
     public Optional<HouseEntity> getHouse(Long cityId) {
         return houseRepository.findById(cityId);
     }
+    
+    @Override
+    public HouseEntity save(HouseEntity houseEntity) {
+        return houseRepository.save(houseEntity);
+    }
 }
