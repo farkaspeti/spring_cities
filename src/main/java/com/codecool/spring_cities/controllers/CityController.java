@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -21,7 +22,7 @@ public class CityController {
     
     @RequestMapping(value = "/cities", produces = "application/json")
     @ResponseBody
-    public Set<CityEntity> getCities() {
+    public List<CityEntity> getCities() {
         return cityService.getCities();
     }
     
@@ -32,7 +33,7 @@ public class CityController {
         if (!cityService.findCity(id)) {
             return ResponseEntity.badRequest().body("There is no city in the database with the given ID");
         }
-        return new ResponseEntity<>("City is found: " + cityService.getCity(id),HttpStatus.OK);
+        return new ResponseEntity<>("City is found: " + cityService.findCityById(id),HttpStatus.OK);
     }
     @PostMapping(value = "/cities", consumes = "application/json", produces = "application/json")
     @ResponseBody
