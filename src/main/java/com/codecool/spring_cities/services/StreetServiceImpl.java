@@ -1,6 +1,7 @@
 package com.codecool.spring_cities.services;
 
 import com.codecool.spring_cities.entities.StreetEntity;
+import com.codecool.spring_cities.model.StreetDto;
 import com.codecool.spring_cities.repositories.StreetRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,12 @@ public class StreetServiceImpl implements StreetService {
     }
     
     @Override
-    public StreetEntity save(StreetEntity streetEntity) {
-        return streetRepository.save(streetEntity);
+    public StreetEntity saveStreet(StreetDto streetDto) {
+        StreetEntity streetEntity = streetRepository.save(StreetEntity.builder()
+                .streetName(streetDto.getStreetName())
+                .cityEntity(streetDto.getCityEntity())
+                .streetHouseEntities(streetDto.getStreetHouseEntities())
+                .build());
+        return streetEntity;
     }
 }

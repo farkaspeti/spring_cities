@@ -17,7 +17,8 @@ public class HouseController {
     @GetMapping(value = "/{id}", produces = "application/json")
     @ResponseBody
     public HouseEntity getHouseById(@PathVariable("id") Long id) {
-        return houseService.getHouse(id);
+        //return houseService.getHouse(id);
+        return null;
     }
     
     @PostMapping(value = "/houses", consumes = "application/json", produces = "application/json")

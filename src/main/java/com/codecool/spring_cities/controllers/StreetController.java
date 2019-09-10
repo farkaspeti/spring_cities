@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Pina 2.
- *
- * <h1>PI@</h1>
  *
  * @author PETI
  * @see {@link http://google.com}
