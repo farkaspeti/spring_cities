@@ -5,6 +5,8 @@ import com.codecool.spring_cities.entities.HouseEntity;
 import com.codecool.spring_cities.repositories.HouseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class HouseServiceImpl implements HouseService {
     
@@ -15,7 +17,7 @@ public class HouseServiceImpl implements HouseService {
     }
     
     @Override
-    public HouseEntity getHouse(Long cityId) {
-        return houseRepository.getHouseByCityId(cityId);
+    public Optional<HouseEntity> getHouse(Long cityId) {
+        return houseRepository.findById(cityId);
     }
 }
