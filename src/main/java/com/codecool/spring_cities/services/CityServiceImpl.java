@@ -32,9 +32,9 @@ public class CityServiceImpl implements CityService {
     @Override
     public CityEntity saveCity(CityDto cityDto) {
         CityEntity cityEntity = cityRepository.save(CityEntity.builder()
-            .cityName(cityDto.getCityName())
-            .population(cityDto.getPopulation())
-            .build());
+                .cityName(cityDto.getCityName())
+                .population(cityDto.getPopulation())
+                .build());
         
         return cityEntity;
     }
