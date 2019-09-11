@@ -1,0 +1,35 @@
+INSERT INTO cities (city_name,population) VALUES ('Tiszaújváros',23421);
+INSERT INTO cities (city_name,population) VALUES ('BudaPest',543210);
+INSERT INTO cities (city_name,population) VALUES ('Debrecen',65321);
+
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Szent István út',1);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Örösi street',1);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Árpád street',1);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Mészáros street',2);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Baross street',2);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Rákóczi street',2);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Hadházi street',3);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Egyetem street',3);
+INSERT INTO streets (street_name,city_entity_id) VALUES ('Doberdó street',3);
+
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('33.','4',1,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('25.','3',1,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('14.','2',1,3);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('26.','8',1,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('45.','32',1,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('12/B.','7',1,3);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('63.','3',2,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('29/A.','10',2,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('87.','62',2,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('43.','8',2,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('546.','3',2,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('74.','8',2,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('23/C.','9',3,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('243.','1',3,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('254.','6',3,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('687.','14',3,2);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('856.','9',3,3);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('89.','32',3,3);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('23.','0',3,1);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('8.','0',2,3);
+INSERT INTO houses (house_number,house_residents,city_entity_id,street_entity_id) VALUES ('13.','0',1,2);

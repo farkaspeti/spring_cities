@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- *
- * @author PETI
- * @see {@link http://google.com}
- */
 @RestController
 @RequestMapping("/streets")
 public class StreetController {
@@ -40,7 +35,7 @@ public class StreetController {
     @GetMapping(value = "/{cityId}/street", produces = "application/json")
     @ResponseBody
     public List<StreetEntity> getAllStreetByCityId(@PathVariable("cityId") Long cityId) {
-        return null;
+        return streetService.getStreets(cityId);
     }
     
     @GetMapping(value = "/{cityId}/street/{streetId}", produces = "application/json")

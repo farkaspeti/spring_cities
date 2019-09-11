@@ -2,14 +2,16 @@ package com.codecool.spring_cities.controllers;
 
 
 import com.codecool.spring_cities.entities.CityEntity;
+import com.codecool.spring_cities.exceptions.ServiceException;
+import com.codecool.spring_cities.model.CityDto;
+import com.codecool.spring_cities.model.ErrorDto;
 import com.codecool.spring_cities.services.CityService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 @RestController
 public class CityController {
@@ -22,23 +24,21 @@ public class CityController {
     
     @RequestMapping(value = "/cities", produces = "application/json")
     @ResponseBody
-    public List<CityEntity> getCities() {
+    public List<CityEntity> getCities() throws ServiceException {
         return cityService.getCities();
     }
     
-    @GetMapping(value = "/{id}", produces = "application/json")
+    @GetMapping(value = "cities/{id}", produces = "application/json")
     @ResponseBody
-    public ResponseEntity<String> getCity(@PathVariable("id") Long id) {
-    
-        if (!cityService.findCity(id)) {
-            return ResponseEntity.badRequest().body("There is no city in the database with the given ID");
-        }
-        return new ResponseEntity<>("City is found: " + cityService.findCityById(id),HttpStatus.OK);
+    public Optional<CityEntity> getCity(@PathVariable("id") Long id) throws ServiceException {
+        return cityService.findCityById(id);
     }
+    
     @PostMapping(value = "/cities", consumes = "application/json", produces = "application/json")
     @ResponseBody
-    public CityEntity addCity() {
-        return null;
+    public CityEntity addCity(@RequestBody CityDto cityDto) {
+        return cityService.saveCity(cityDto);
     }
+    
 }
 
