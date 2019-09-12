@@ -11,5 +11,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ErrorDto implements Serializable {
     
-    String message;
+    private String message;
 }

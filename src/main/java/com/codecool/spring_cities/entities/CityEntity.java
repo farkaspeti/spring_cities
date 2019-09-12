@@ -1,5 +1,6 @@
 package com.codecool.spring_cities.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,14 +19,15 @@ public class CityEntity extends AbstractEntity<Long> implements Serializable {
     private String cityName;
     private Long population;
     
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cityEntity")
-    List<StreetEntity> cityStreetEntityList = new ArrayList<>();
+    List<StreetEntity> streetEntities = new ArrayList<>();
     
     @Builder
-    public CityEntity(Long id, String cityName, Long population, List<StreetEntity> cityStreetEntityList) {
+    public CityEntity(Long id, String cityName, Long population, List<StreetEntity> streetEntities) {
         super(id);
         this.cityName = cityName;
         this.population = population;
-        this.cityStreetEntityList = cityStreetEntityList;
+        this.streetEntities = streetEntities;
     }
 }

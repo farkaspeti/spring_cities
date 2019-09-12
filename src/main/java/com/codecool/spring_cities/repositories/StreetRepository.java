@@ -6,13 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
 @Repository
 public interface StreetRepository extends CrudRepository<StreetEntity, Long> {
     
-    List<StreetEntity> findAllByCityEntityId(long cityEntityId);
+    List<StreetEntity> findAllByCityEntityId(Long cityEntityId);
     
     StreetEntity findByIdAndCityEntityId(Long id, Long cityEntityId);
     
-    StreetEntity save(StreetEntity streetEntity);
+    //StreetEntity saveByCityEntityId(StreetEntity streetEntity,Long cityEntityId);
+    
 }

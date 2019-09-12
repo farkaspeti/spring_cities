@@ -6,7 +6,7 @@ import com.codecool.spring_cities.model.HouseDto;
 import com.codecool.spring_cities.repositories.HouseRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class HouseServiceImpl implements HouseService {
@@ -18,15 +18,19 @@ public class HouseServiceImpl implements HouseService {
     }
     
     @Override
-    public Optional<HouseEntity> getHouse(Long cityId) {
-        return houseRepository.findById(cityId);
+    public List<HouseEntity> findByCityEntityId(Long cityId) {
+        return houseRepository.findByCityEntityId(cityId);
+    }
+    
+    
+    @Override
+    public HouseEntity findHouseById(long houseId) {
+        return houseRepository.findById(houseId);
     }
     
     @Override
     public HouseEntity saveHouse(HouseDto houseDto) {
         HouseEntity houseEntity = houseRepository.save(HouseEntity.builder()
-                .cityEntity(houseDto.getCityEntity())
-                .streetEntity(houseDto.getStreetEntity())
                 .houseResidents(houseDto.getHouseResidents())
                 .houseNumber(houseDto.getHouseNumber())
                 .build());

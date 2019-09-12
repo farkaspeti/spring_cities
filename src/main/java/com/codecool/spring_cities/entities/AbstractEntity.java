@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @MappedSuperclass
-public class AbstractEntity< T extends Serializable> implements Serializable {
+public class AbstractEntity<T extends Serializable> implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

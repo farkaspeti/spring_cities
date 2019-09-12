@@ -17,22 +17,20 @@ public class StreetServiceImpl implements StreetService {
     }
     
     @Override
-    public List<StreetEntity> getStreets(Long cityId) {
+    public List<StreetEntity> findAllByCityEntityId(Long cityId) {
         return streetRepository.findAllByCityEntityId(cityId);
     }
     
     @Override
-    public StreetEntity getStreetDetails(Long id, Long cityId) {
+    public StreetEntity findByIdAndCityEntityId(Long cityEntityId, Long streetId) {
         
-        return streetRepository.findByIdAndCityEntityId(id, cityId);
+        return streetRepository.findByIdAndCityEntityId(streetId, cityEntityId);
     }
     
     @Override
-    public StreetEntity saveStreet(StreetDto streetDto) {
+    public StreetEntity saveStreet(StreetDto streetDto, Long cityId) {
         StreetEntity streetEntity = streetRepository.save(StreetEntity.builder()
                 .streetName(streetDto.getStreetName())
-                .cityEntity(streetDto.getCityEntity())
-                .streetHouseEntities(streetDto.getStreetHouseEntities())
                 .build());
         return streetEntity;
     }

@@ -5,14 +5,13 @@ import com.codecool.spring_cities.exceptions.ServiceException;
 import com.codecool.spring_cities.model.CityDto;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface CityService {
     
     List<CityEntity> getCities() throws ServiceException;
     
-    Optional<CityEntity> findCityById(Long id) throws ServiceException;
+    CityEntity findCityById(long id) throws ServiceException;
     
     CityEntity saveCity(CityDto cityDto);
     

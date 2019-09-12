@@ -1,52 +1,51 @@
 package com.codecool.spring_cities.controllers;
 
 import com.codecool.spring_cities.entities.StreetEntity;
+import com.codecool.spring_cities.exceptions.ServiceException;
+import com.codecool.spring_cities.model.StreetDto;
 import com.codecool.spring_cities.services.StreetService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 @RestController
 @RequestMapping("/streets")
 public class StreetController {
     
-    /**
-     * Reference to a {@link StreetService} implementation.
-     *
-     * @see com.codecool.spring_cities.services.StreetServiceImpl
-     */
-    private final StreetService streetService;
     
-    /**
-     * Creates a new StreetController instance.
-     *
-     * @param streetService a reference to a {@link StreetService} implementation.
-     */
+    private final StreetService streetService;
+    private final ModelMapper modelMapper = new ModelMapper();
+    
     public StreetController(StreetService streetService) {
         this.streetService = streetService;
     }
     
-    /**
-     * asdasd
-     *
-     * @param cityId
-     * @return
-     */
-    @GetMapping(value = "/{cityId}/street", produces = "application/json")
+    @GetMapping(value = "/{cityId}", produces = "application/json")
     @ResponseBody
-    public List<StreetEntity> getAllStreetByCityId(@PathVariable("cityId") Long cityId) {
-        return streetService.getStreets(cityId);
+    public List<StreetDto> getAllStreetByCityId(@PathVariable("cityId") Long cityId) throws ServiceException {
+        if (streetService.findAllByCityEntityId(cityId) != null) {
+            Type listType = new TypeToken<List<StreetDto>>() {
+            }.getType();
+            return modelMapper.map(streetService.findAllByCityEntityId(cityId), listType);
+        }
+        throw new ServiceException("There is no such City with the given Id: " + cityId);
     }
     
-    @GetMapping(value = "/{cityId}/street/{streetId}", produces = "application/json")
+    @GetMapping(value = "/{cityId}/{streetId}", produces = "application/json")
     @ResponseBody
-    public StreetEntity getStreetDetailsByCityId(@PathVariable("cityId") Long cityId, @PathVariable("streetId") Long streetId) {
-        return null;
+    public StreetDto getStreetDetailsByCityId(@PathVariable("cityId") Long cityId, @PathVariable("streetId") Long streetId) throws ServiceException {
+        if (streetService.findByIdAndCityEntityId(cityId, streetId) != null) {
+            return modelMapper.map(streetService.findByIdAndCityEntityId(cityId, streetId), StreetDto.class);
+        }
+        throw new ServiceException("There is no such Id combination, cityId: " + cityId + " " + " streetId: " + streetId);
     }
     
     @PostMapping(value = "/cities/{cityId}/streets", consumes = "application/json", produces = "application/json")
     @ResponseBody
-    public StreetEntity addStreet(@PathVariable("cityId") Long cityId) {
-        return null;
+    public StreetEntity addStreet(@RequestBody StreetDto streetDto, @PathVariable("cityId") Long cityId) {
+        return streetService.saveStreet(streetDto, cityId);
     }
 }

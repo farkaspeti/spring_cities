@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class HouseEntity extends AbstractEntity<Long> implements Serializable {
     private String houseNumber;
     
     @Builder
-    public HouseEntity(Long id, CityEntity cityEntity, StreetEntity streetEntity,int houseResidents, String houseNumber) {
+    public HouseEntity(Long id, CityEntity cityEntity, StreetEntity streetEntity, int houseResidents, String houseNumber) {
         super(id);
         this.cityEntity = cityEntity;
         this.streetEntity = streetEntity;

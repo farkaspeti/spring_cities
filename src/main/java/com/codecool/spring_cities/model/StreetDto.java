@@ -1,7 +1,5 @@
 package com.codecool.spring_cities.model;
 
-import com.codecool.spring_cities.entities.CityEntity;
-import com.codecool.spring_cities.entities.HouseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 public class StreetDto implements Serializable {
     
+    private Long id;
     private String streetName;
-    private List<HouseEntity> streetHouseEntities;
-    private CityEntity cityEntity;
+    private List<HouseDto> streetHouseEntities;
+    
 }
