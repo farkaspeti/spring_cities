@@ -2,10 +2,10 @@ package com.codecool.spring_cities.services;
 
 public interface StatService {
     
-    double avarageResidents();
+    double averageResidents();
     
-    double avarageResidentsInCity(Long cityId);
+    double averageResidentsInCity(Long cityId);
     
-    double avaragePopulationInCity(Long cityId);
+    double averagePopulationInCity(Long cityId);
 
 }
