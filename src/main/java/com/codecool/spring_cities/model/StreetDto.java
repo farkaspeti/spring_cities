@@ -14,6 +14,6 @@ public class StreetDto implements Serializable {
     
     private Long id;
     private String streetName;
-    private List<HouseDto> streetHouseEntities;
+    private List<HouseDto> houseEntities;
     
 }

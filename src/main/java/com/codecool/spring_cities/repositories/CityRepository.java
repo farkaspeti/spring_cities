@@ -11,4 +11,5 @@ public interface CityRepository extends CrudRepository<CityEntity, Long> {
     CityEntity findById(long cityId);
     
     CityEntity save(CityEntity cityEntity);
+    
 }

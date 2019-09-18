@@ -50,6 +50,5 @@ public class CityController {
     public CityEntity addCity(@RequestBody CityDto cityDto) {
         return cityService.saveCity(cityDto);
     }
-    
 }
 

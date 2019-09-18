@@ -14,4 +14,5 @@ public interface HouseRepository extends CrudRepository<HouseEntity, Long> {
     HouseEntity findById(long houseId);
     
     HouseEntity save(HouseEntity houseEntity);
+    
 }

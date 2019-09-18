@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ServiceExceptionHandler {
     
+    @ExceptionHandler(NumberFormatException.class)
+    public ResponseEntity<ErrorDto> numberFormatExceptionHandler(NumberFormatException ex) {
+        return new ResponseEntity<>(new ErrorDto(ex.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+    
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<ErrorDto> serviceExceptionHandler(ServiceException ex) {
         return new ResponseEntity<>(new ErrorDto(ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
