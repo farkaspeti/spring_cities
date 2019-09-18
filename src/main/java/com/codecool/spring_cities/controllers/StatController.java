@@ -27,7 +27,7 @@ public class StatController {
         if (statService.averageResidentsInCity(id) != 0) {
             return statService.averageResidentsInCity(id);
         }
-        throw new ServiceException("Something Went Wrong!");
+        throw new ServiceException("There is no City with this ID");
     }
     
     @GetMapping("/cities/average-population")
@@ -36,5 +36,13 @@ public class StatController {
             return statService.averagePopulation();
         }
         throw new ServiceException("Something Went Wrong!");
+    }
+    
+    @GetMapping("/cities/average-population/city")
+    public double getAveragePopulation(@RequestParam Long id) throws ServiceException {
+        if (statService.averagePopulationInCity(id) != 0) {
+            return statService.averagePopulationInCity(id);
+        }
+        throw new ServiceException("There is no City with this ID!");
     }
 }
