@@ -8,8 +8,8 @@ public interface StatService {
     
     double averageResidents() throws ServiceException;
     
-    /*double averageResidentsInCity(Long cityId);
+    double averageResidentsInCity(Long cityId);
     
-    double averagePopulationInCity(Long cityId);*/
+    //double averagePopulationInCity(Long cityId);
 
 }
