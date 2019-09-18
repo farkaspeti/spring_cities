@@ -1,9 +1,7 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.repositories.CityRepository;
-import com.codecool.spring_cities.repositories.HouseRepository;
+import com.codecool.spring_cities.entities.StatEntity;
 import com.codecool.spring_cities.repositories.StatRepository;
-import com.codecool.spring_cities.repositories.StreetRepository;
 import org.springframework.stereotype.Service;
 
 @Service
