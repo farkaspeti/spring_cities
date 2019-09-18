@@ -1,6 +1,6 @@
 package com.codecool.spring_cities.services;
 
-import com.codecool.spring_cities.entities.StatEntity;
+import com.codecool.spring_cities.exceptions.ServiceException;
 import com.codecool.spring_cities.repositories.StatRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ public class StatServiceImpl implements StatService {
         return statRepository.averageResidents();
     }
     
-   @Override
+    @Override
     public double averageResidentsInCity(Long cityId) {
         return statRepository.averageResidentsInCity(cityId);
     }
@@ -26,5 +26,10 @@ public class StatServiceImpl implements StatService {
     @Override
     public double averagePopulation() {
         return statRepository.averagePopulation();
+    }
+    
+    @Override
+    public double averagePopulationInCity(Long cityId) {
+        return statRepository.averagePopulationInCity(cityId);
     }
 }
