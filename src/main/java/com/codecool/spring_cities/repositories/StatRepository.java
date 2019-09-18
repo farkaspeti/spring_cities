@@ -15,5 +15,5 @@ public interface StatRepository extends CrudRepository<StatEntity, Long>{
     double averageResidentsInCity(Long cityId);
     
     @Query(value = "SELECT SUM(HOUSE_RESIDENTS) FROM HOUSES",nativeQuery = true)
-    double averagePopulationInCity(Long cityId);
+    double averagePopulation();
 }
