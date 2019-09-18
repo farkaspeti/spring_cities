@@ -11,6 +11,6 @@ public interface StatService {
     
     double averagePopulation() throws ServiceException;
     
-    double averagePopulationInCity(Long cityId) throws ServiceException;
+    long populationInCity(Long cityId) throws ServiceException;
 
 }

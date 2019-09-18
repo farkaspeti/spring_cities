@@ -38,10 +38,10 @@ public class StatController {
         throw new ServiceException("Something Went Wrong!");
     }
     
-    @GetMapping("/cities/average-population/city")
+    @GetMapping("/cities/population/city")
     public double getAveragePopulation(@RequestParam Long id) throws ServiceException {
-        if (statService.averagePopulationInCity(id) != 0) {
-            return statService.averagePopulationInCity(id);
+        if (statService.populationInCity(id) != 0) {
+            return statService.populationInCity(id);
         }
         throw new ServiceException("There is no City with this ID!");
     }

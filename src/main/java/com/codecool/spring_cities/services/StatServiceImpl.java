@@ -29,7 +29,7 @@ public class StatServiceImpl implements StatService {
     }
     
     @Override
-    public double averagePopulationInCity(Long cityId) {
-        return statRepository.averagePopulationInCity(cityId);
+    public long populationInCity(Long cityId) {
+        return statRepository.populationInCity(cityId);
     }
 }
