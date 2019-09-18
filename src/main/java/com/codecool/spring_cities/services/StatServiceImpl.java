@@ -32,4 +32,9 @@ public class StatServiceImpl implements StatService {
     public long populationInCity(Long cityId) {
         return statRepository.populationInCity(cityId);
     }
+    
+    @Override
+    public long maxPopulation() {
+        return statRepository.maxPopulation();
+    }
 }
