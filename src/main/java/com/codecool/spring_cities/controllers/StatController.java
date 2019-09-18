@@ -29,4 +29,12 @@ public class StatController {
         }
         throw new ServiceException("Something Went Wrong!");
     }
+    
+    @GetMapping("/cities/average-population")
+    public double getAveragePopulation() throws ServiceException {
+        if (statService.averagePopulation() != 0) {
+            return statService.averagePopulation();
+        }
+        throw new ServiceException("Something Went Wrong!");
+    }
 }
