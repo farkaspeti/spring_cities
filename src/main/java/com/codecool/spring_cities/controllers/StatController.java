@@ -45,4 +45,12 @@ public class StatController {
         }
         throw new ServiceException("There is no City with this ID!");
     }
+    
+    @GetMapping("/cities/sum-population")
+    public double getSumPopulation() throws ServiceException {
+        if (statService.sumPopulation() != 0) {
+            return statService.sumPopulation();
+        }
+        throw new ServiceException("There is no City with this ID!");
+    }
 }

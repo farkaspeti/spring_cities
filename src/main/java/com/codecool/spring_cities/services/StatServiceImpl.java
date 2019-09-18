@@ -34,7 +34,7 @@ public class StatServiceImpl implements StatService {
     }
     
     @Override
-    public long maxPopulation() {
-        return statRepository.maxPopulation();
+    public long sumPopulation() {
+        return statRepository.sumPopulation();
     }
 }
