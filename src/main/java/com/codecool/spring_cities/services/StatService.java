@@ -4,8 +4,8 @@ public interface StatService {
     
     double averageResidents();
     
-    double averageResidentsInCity(Long cityId);
+    /*double averageResidentsInCity(Long cityId);
     
-    double averagePopulationInCity(Long cityId);
+    double averagePopulationInCity(Long cityId);*/
 
 }

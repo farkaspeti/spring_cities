@@ -2,28 +2,25 @@ package com.codecool.spring_cities.services;
 
 import com.codecool.spring_cities.repositories.CityRepository;
 import com.codecool.spring_cities.repositories.HouseRepository;
+import com.codecool.spring_cities.repositories.StatRepository;
 import com.codecool.spring_cities.repositories.StreetRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StatServiceImpl implements StatService {
     
-    private final CityRepository cityRepository;
-    private final HouseRepository houseRepository;
-    private final StreetRepository streetRepository;
+    private final StatRepository statRepository;
     
-    public StatServiceImpl(CityRepository cityRepository, HouseRepository houseRepository, StreetRepository streetRepository) {
-        this.cityRepository = cityRepository;
-        this.houseRepository = houseRepository;
-        this.streetRepository = streetRepository;
+    public StatServiceImpl(StatRepository statRepository) {
+        this.statRepository = statRepository;
     }
     
     @Override
     public double averageResidents() {
-        return 0;
+        return statRepository.averageResidents();
     }
     
-    @Override
+   /* @Override
     public double averageResidentsInCity(Long cityId) {
         return 0;
     }
@@ -31,5 +28,5 @@ public class StatServiceImpl implements StatService {
     @Override
     public double averagePopulationInCity(Long cityId) {
         return 0;
-    }
+    }*/
 }
