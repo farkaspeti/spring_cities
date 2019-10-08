@@ -32,4 +32,7 @@ public class StreetEntity extends AbstractEntity<Long> implements Serializable {
         this.cityEntity = cityEntity;
         
     }
+    
+    public StreetEntity(String testStreet, List<HouseEntity> houses, CityEntity city) {
+    }
 }

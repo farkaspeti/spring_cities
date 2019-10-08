@@ -2,7 +2,6 @@ package com.codecool.spring_cities;
 
 import com.codecool.spring_cities.entities.HouseEntity;
 import com.codecool.spring_cities.entities.StreetEntity;
-import com.codecool.spring_cities.repositories.CityRepository;
 import com.codecool.spring_cities.entities.CityEntity;
 import com.codecool.spring_cities.repositories.HouseRepository;
 import org.junit.Test;
@@ -47,5 +46,4 @@ public class HouseRepositoryIntegrationTests {
         assertThat(found.getId())
                 .isEqualTo(testHouse.getId());
     }
-    
 }
