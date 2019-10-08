@@ -38,9 +38,4 @@ public class CityServiceImpl implements CityService {
         
         return cityEntity;
     }
-    
-    @Override
-    public Boolean findCity(Long id) {
-        return cityRepository.findById(id) != null;
-    }
 }

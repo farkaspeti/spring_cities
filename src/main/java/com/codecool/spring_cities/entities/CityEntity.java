@@ -30,4 +30,10 @@ public class CityEntity extends AbstractEntity<Long> implements Serializable {
         this.population = population;
         this.streetEntities = streetEntities;
     }
+    
+    public CityEntity(String cityName, Long population, List<StreetEntity> streetEntities) {
+        this.cityName = cityName;
+        this.population = population;
+        this.streetEntities = streetEntities;
+    }
 }

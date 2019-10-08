@@ -15,5 +15,4 @@ public interface CityService {
     
     CityEntity saveCity(CityDto cityDto);
     
-    Boolean findCity(Long id);
 }

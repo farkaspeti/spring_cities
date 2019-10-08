@@ -13,6 +13,6 @@ public interface StreetRepository extends CrudRepository<StreetEntity, Long> {
     
     StreetEntity findByIdAndCityEntityId(Long id, Long cityEntityId);
     
-    //StreetEntity saveByCityEntityId(StreetEntity streetEntity,Long cityEntityId);
+   // StreetEntity save(StreetEntity streetEntity,Long cityEntityId);
     
 }

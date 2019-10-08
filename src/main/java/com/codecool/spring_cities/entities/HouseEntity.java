@@ -24,8 +24,6 @@ public class HouseEntity extends AbstractEntity<Long> implements Serializable {
     @Builder
     public HouseEntity(Long id, CityEntity cityEntity, StreetEntity streetEntity, int houseResidents, String houseNumber) {
         super(id);
-        this.cityEntity = cityEntity;
-        this.streetEntity = streetEntity;
         this.houseResidents = houseResidents;
         this.houseNumber = houseNumber;
     }
