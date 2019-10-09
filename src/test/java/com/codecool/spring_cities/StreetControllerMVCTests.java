@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -40,7 +39,7 @@ public class StreetControllerMVCTests {
         when(streetService.findAllByCityEntityId(1L)).thenReturn(List.of(
                 new StreetEntity(1L, "A", null, null)));
         mockMvc.perform(MockMvcRequestBuilders
-                .get("/streets/{id}", 1)
+                .get("/streets/{cityId}", 1)
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -49,4 +48,17 @@ public class StreetControllerMVCTests {
         verify(streetService, times(1)).findAllByCityEntityId(1L);
     }
     
+    @Test
+    public void getStreetDetailsByCityId() throws Exception {
+        when(streetService.findByIdAndCityEntityId(1L,1L))
+                .thenReturn(new StreetEntity(1L, "A", null, null));
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/streets/{cityId}/{streetId}",1,1)
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1));
+        
+        verify(streetService, times(1)).findByIdAndCityEntityId(1L,1L);
+    }
 }
