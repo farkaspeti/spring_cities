@@ -29,12 +29,12 @@ public class StatServiceImpl implements StatService {
     }
     
     @Override
-    public long populationInCity(Long cityId) {
+    public int populationInCity(Long cityId) {
         return statRepository.populationInCity(cityId);
     }
     
     @Override
-    public long sumPopulation() {
+    public int sumPopulation() {
         return statRepository.sumPopulation();
     }
 }

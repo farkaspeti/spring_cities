@@ -11,8 +11,8 @@ public interface StatService {
     
     double averagePopulation() throws ServiceException;
     
-    long sumPopulation() throws ServiceException;
+    int sumPopulation() throws ServiceException;
     
-    long populationInCity(Long cityId) throws ServiceException;
+    int populationInCity(Long cityId) throws ServiceException;
 
 }
