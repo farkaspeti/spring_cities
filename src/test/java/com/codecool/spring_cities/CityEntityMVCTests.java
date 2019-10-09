@@ -36,9 +36,9 @@ public class CityEntityMVCTests {
     @Test
     public void getAllCities() throws Exception {
         when(cityService.getCities()).thenReturn(List.of(
-                new CityEntity(1L, "A", 100L, null),
-                new CityEntity(2L, "B", 1001L, null),
-                new CityEntity(3L, "C", 111L, null)
+                new CityEntity(1L, "A", 100, null),
+                new CityEntity(2L, "B", 1001, null),
+                new CityEntity(3L, "C", 111, null)
         ));
         
         mockMvc.perform(MockMvcRequestBuilders
@@ -55,7 +55,7 @@ public class CityEntityMVCTests {
     @Test
     public void getCityById() throws Exception {
         
-        when(cityService.findCityById(1)).thenReturn((new CityEntity(1L, "A", 100L, null)));
+        when(cityService.findCityById(1)).thenReturn((new CityEntity(1L, "A", 100, null)));
         mockMvc.perform(MockMvcRequestBuilders
                 .get("/cities/{id}", 1)
                 .accept(MediaType.APPLICATION_JSON))

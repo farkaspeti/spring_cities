@@ -17,21 +17,21 @@ import java.util.List;
 public class CityEntity extends AbstractEntity<Long> implements Serializable {
     
     private String cityName;
-    private Long population;
+    private Integer population;
     
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cityEntity")
     List<StreetEntity> streetEntities = new ArrayList<>();
     
     @Builder
-    public CityEntity(Long id, String cityName, Long population, List<StreetEntity> streetEntities) {
+    public CityEntity(Long id, String cityName, Integer population, List<StreetEntity> streetEntities) {
         super(id);
         this.cityName = cityName;
         this.population = population;
         this.streetEntities = streetEntities;
     }
     
-    public CityEntity(String cityName, Long population, List<StreetEntity> streetEntities) {
+    public CityEntity(String cityName, Integer population, List<StreetEntity> streetEntities) {
         this.cityName = cityName;
         this.population = population;
         this.streetEntities = streetEntities;

@@ -14,6 +14,6 @@ public class CityDto implements Serializable {
     
     private Long id;
     private String cityName;
-    private Long population;
+    private Integer population;
     private List<StreetDto> streetEntities;
 }
