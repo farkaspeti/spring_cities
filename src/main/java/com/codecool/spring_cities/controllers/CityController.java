@@ -28,10 +28,11 @@ public class CityController {
     @RequestMapping(value = "/cities", produces = "application/json")
     @ResponseBody
     public List<CityDto> getCities() throws ServiceException {
-        if (cityService.getCities() != null) {
+        List<CityEntity> cities = cityService.getCities();
+        if (cities != null) {
             Type listType = new TypeToken<List<CityDto>>() {
             }.getType();
-            return modelMapper.map(cityService.getCities(), listType);
+            return modelMapper.map(cities, listType);
         }
         throw new ServiceException("There are no cities in this application?!");
     }
