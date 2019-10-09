@@ -26,10 +26,11 @@ public class StreetController {
     @GetMapping(value = "/{cityId}", produces = "application/json")
     @ResponseBody
     public List<StreetDto> getAllStreetByCityId(@PathVariable("cityId") Long cityId) throws ServiceException {
-        if (streetService.findAllByCityEntityId(cityId) != null) {
+        List<StreetEntity> allByCityEntityId = streetService.findAllByCityEntityId(cityId);
+        if (allByCityEntityId != null) {
             Type listType = new TypeToken<List<StreetDto>>() {
             }.getType();
-            return modelMapper.map(streetService.findAllByCityEntityId(cityId), listType);
+            return modelMapper.map(allByCityEntityId, listType);
         }
         throw new ServiceException("There is no such City with the given Id: " + cityId);
     }
@@ -37,8 +38,9 @@ public class StreetController {
     @GetMapping(value = "/{cityId}/{streetId}", produces = "application/json")
     @ResponseBody
     public StreetDto getStreetDetailsByCityId(@PathVariable("cityId") Long cityId, @PathVariable("streetId") Long streetId) throws ServiceException {
-        if (streetService.findByIdAndCityEntityId(cityId, streetId) != null) {
-            return modelMapper.map(streetService.findByIdAndCityEntityId(cityId, streetId), StreetDto.class);
+        StreetEntity byIdAndCityEntityId = streetService.findByIdAndCityEntityId(cityId, streetId);
+        if (byIdAndCityEntityId != null) {
+            return modelMapper.map(byIdAndCityEntityId, StreetDto.class);
         }
         throw new ServiceException("There is no such Id combination, cityId: " + cityId + " " + " streetId: " + streetId);
     }
