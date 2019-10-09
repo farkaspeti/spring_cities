@@ -40,8 +40,9 @@ public class CityController {
     @GetMapping(value = "cities/{id}", produces = "application/json")
     @ResponseBody
     public CityDto getCity(@PathVariable("id") Long id) throws ServiceException {
-        if (cityService.findCityById(id) != null) {
-            return modelMapper.map(cityService.findCityById(id), CityDto.class);
+        CityEntity cityById = cityService.findCityById(id);
+        if (cityById != null) {
+            return modelMapper.map(cityById, CityDto.class);
         }
         throw new ServiceException("There is no such City with the given Id: " + id);
     }
