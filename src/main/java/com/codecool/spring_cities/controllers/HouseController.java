@@ -25,10 +25,11 @@ public class HouseController {
     @GetMapping(value = "/cities/{id}", produces = "application/json")
     @ResponseBody
     public List<HouseDto> getHousesByCityId(@PathVariable("id") Long id) throws ServiceException {
-        if (houseService.findByCityEntityId(id) != null) {
+        List<HouseEntity> byCityEntityId = houseService.findByCityEntityId(id);
+        if (byCityEntityId != null) {
             Type listType = new TypeToken<List<HouseDto>>() {
             }.getType();
-            return modelMapper.map(houseService.findByCityEntityId(id), listType);
+            return modelMapper.map(byCityEntityId, listType);
         }
         throw new ServiceException("There is no such City with the given Id: " + id);
     }
@@ -36,8 +37,9 @@ public class HouseController {
     @GetMapping(value = "/{id}", produces = "application/json")
     @ResponseBody
     public HouseDto getHouseById(@PathVariable("id") Long id) throws ServiceException {
-        if (houseService.findHouseById(id) != null) {
-            return modelMapper.map(houseService.findHouseById(id), HouseDto.class);
+        HouseEntity houseById = houseService.findHouseById(id);
+        if (houseById != null) {
+            return modelMapper.map(houseById, HouseDto.class);
         }
         throw new ServiceException("There is no such House with the given Id: " + id);
     }
