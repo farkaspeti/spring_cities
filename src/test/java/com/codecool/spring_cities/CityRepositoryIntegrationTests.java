@@ -33,7 +33,7 @@ public class CityRepositoryIntegrationTests {
         
         // given
         List<StreetEntity> streets = new ArrayList<>();
-        CityEntity monaco = new CityEntity("Monaco", (long) 433242, streets);
+        CityEntity monaco = new CityEntity("Monaco",433242, streets);
         entityManager.persist(monaco);
         entityManager.flush();
         
