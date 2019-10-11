@@ -2,7 +2,6 @@ package com.codecool.spring_cities;
 
 import com.codecool.spring_cities.controllers.CityController;
 import com.codecool.spring_cities.entities.CityEntity;
-import com.codecool.spring_cities.model.CityDto;
 import com.codecool.spring_cities.services.CityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
