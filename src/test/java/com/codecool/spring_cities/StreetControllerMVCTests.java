@@ -1,13 +1,12 @@
 package com.codecool.spring_cities;
 
 
-import com.codecool.spring_cities.controllers.CityController;
 import com.codecool.spring_cities.controllers.StreetController;
 import com.codecool.spring_cities.entities.StreetEntity;
 import com.codecool.spring_cities.services.StreetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
